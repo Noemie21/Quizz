@@ -1,6 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+
 from django.db.models.expressions import F
-from django.contrib.auth.models import User
+
+
+class User(AbstractUser):
+    score = models.IntegerField(default=0)
 
 
 class Question(models.Model):
