@@ -14,3 +14,7 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, "registration/register.html", context={"form":form})
+
+
+def home(request):
+    return render(request, 'questions/home.html')
