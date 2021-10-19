@@ -2,6 +2,7 @@
 from django.shortcuts import redirect, render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import *
 
@@ -20,6 +21,7 @@ def register(request):
     return render(request, "registration/register.html", context={"form": form})
 
 
+@login_required
 def home(request):
     current_user = request.user
 

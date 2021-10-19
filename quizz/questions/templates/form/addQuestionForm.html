@@ -1,0 +1,14 @@
+<h3>Add question</h3>
+<form method="POST" action="/">
+{% csrf_token %}
+{{form.content}}
+
+<input type="submit" name= "Add question">
+
+</form>
+
+{% for question in questions %}
+<div>
+<span>{{question}}</span>
+<div>
+{% endfor %}

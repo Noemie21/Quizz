@@ -7,7 +7,7 @@ class Question(models.Model):
     content = models.CharField(max_length=200)
     answer = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
-    howManyTime = models.IntegerField()
+    howManyTime = models.IntegerField(default=2)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, blank=True, null=True)
 
