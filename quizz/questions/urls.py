@@ -18,5 +18,7 @@ from django.urls import path, include
 from . import views
 urlpatterns = [
     path('register/', views.register, name="register"),
-    path('home', views.home, name="home")
+    path('', views.index, name="questions"),
+    path('home/', views.home, name='home')
+
 ]
