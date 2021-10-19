@@ -10,9 +10,9 @@ class User(AbstractUser):
 
 class Question(models.Model):
     content = models.CharField(max_length=200)
-    answer = models.BooleanField(default=False)
+    answer = models.CharField(max_length=200)
     created = models.DateTimeField(auto_now_add=True)
-    howManyTime = models.IntegerField(default=2)
+    howManyTime = models.IntegerField(default=0)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, blank=True, null=True)
 
